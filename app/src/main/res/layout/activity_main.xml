@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:id="@+id/rootLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/choose_league"
+                android:textSize="@dimen/textViewFMA"
+                android:gravity="center"
+                android:padding="@dimen/card_corners"
+                android:textColor="@android:color/black"
+                />
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                android:padding="@dimen/recylerViewMargin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                />
+
+        </LinearLayout>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>
