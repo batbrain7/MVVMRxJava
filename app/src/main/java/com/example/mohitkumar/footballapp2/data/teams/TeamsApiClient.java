@@ -1,33 +1,52 @@
 package com.example.mohitkumar.footballapp2.data.teams;
 
-import android.content.Context;
 import android.util.Log;
 
 import com.example.mohitkumar.footballapp2.data.CreateService;
 
 import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 import static com.example.mohitkumar.footballapp2.MainApplication.TAG;
-import static io.reactivex.android.schedulers.AndroidSchedulers.mainThread;
 
-public class TeamsApiClient implements TeamsApi {
+public class TeamsApiClient implements TeamService {
 
     private TeamsApi teamsApi;
-    private Context context;
 
-    public TeamsApiClient(Context context) {
+    public TeamsApiClient() {
         this.teamsApi = CreateService.getTeamsApi();
-        this.context = context;
     }
 
     @Override
     public Observable<TeamResponse> getTeams(int id) {
         Observable<TeamResponse> observable = teamsApi.getTeams(id)
-                .subscribeOn(Schedulers.io())
-                .observeOn(mainThread());
+                .subscribeOn(Schedulers.single())
+                .observeOn(AndroidSchedulers.mainThread());
 
-        Log.d(TAG, "EXITING TEAMS API CLIENT");
+        observable.subscribe(new Observer<TeamResponse>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                Log.d(TAG, "inside api client disposable " + d.toString());
+            }
+
+            @Override
+            public void onNext(TeamResponse teamResponse) {
+                Log.d(TAG, "inside api client onNext " + teamResponse.teamData.toString());
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.d(TAG, "inside api client error " + e.toString());
+            }
+
+            @Override
+            public void onComplete() {
+                Log.d(TAG, "complete");
+            }
+        });
 
         return observable;
     }

@@ -12,19 +12,19 @@ public class Competition {
 //    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     @Expose(serialize = true, deserialize = false)
-    public long idCompetition;
+    public long id;
 
     @ColumnInfo(name = "name")
     @Expose(serialize = true, deserialize = false)
-    public String leagueName;
+    public String name;
 
     @ColumnInfo(name = "code")
     @Expose(serialize = true, deserialize = false)
-    public String leagueCode;
+    public String code;
 
     @ColumnInfo(name = "plan")
     @Expose(serialize = true, deserialize = false)
-    public String leagueType;
+    public String plan;
 
     @ColumnInfo(name = "area")
     @Expose(serialize = true, deserialize = false)

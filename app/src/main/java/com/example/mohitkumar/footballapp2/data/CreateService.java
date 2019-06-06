@@ -7,9 +7,10 @@ import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
-public class CreateService {
+public final class CreateService {
     
     private static final HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor()
                                                                 .setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -23,7 +24,7 @@ public class CreateService {
             new Retrofit.Builder()
                     .client(client)
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(JacksonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
             .baseUrl("http://api.football-data.org/v2/competitions/");
 
 

@@ -15,6 +15,6 @@ public class Area {
 
     @ColumnInfo(name = "name")
     @Expose(serialize = true, deserialize = false)
-    public String countryName;
+    public String name;
 
 }

@@ -61,7 +61,7 @@ public class TeamFragment extends Fragment {
 
     private void loadTeams() {
 
-        teamViewModel.getTeamData(leagueCode, new TeamsApiClient(getActivity())).observe(this, new Observer<List<TeamData>>() {
+        teamViewModel.getTeamData(leagueCode).observe(this, new Observer<List<TeamData>>() {
             @Override
             public void onChanged(@Nullable List<TeamData> teamData) {
                 Log.d(TAG, teamData.size() + " " + teamData.toString());
