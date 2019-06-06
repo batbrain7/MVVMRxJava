@@ -46,7 +46,7 @@ public final class CreateService {
                     .client(client)
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://api.football-data.org/v2/competitions/");
+            .baseUrl("https://api.football-data.org/");
 
 
     private static Retrofit retrofit;
