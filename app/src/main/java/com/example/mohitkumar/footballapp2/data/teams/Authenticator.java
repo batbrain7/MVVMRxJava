@@ -18,13 +18,11 @@ public class Authenticator implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
         Request original = chain.request();
 
-//        Headers headers = original.headers().newBuilder()
-//                .add("X-Auth-Token", "797ad1104406499e92149d685830061a").build();
         Request request = original.newBuilder()
-                .header("X-Auth-Token", "797ad1104406499e92149d685830061a")
+                .addHeader("X-Auth-Token", "797ad1104406499e92149d685830061a")
                 .method(original.method(), original.body())
                 .build();
-        Log.d(TAG,  chain.request().url().toString());
+        Log.d(TAG,  chain.request().url().toString() + " " + chain.request().header("X-Auth-Token"));
         return chain.proceed(request);
     }
 }
