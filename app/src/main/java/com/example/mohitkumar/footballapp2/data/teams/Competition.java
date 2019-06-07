@@ -10,23 +10,23 @@ import lombok.Data;
 public class Competition {
 
 //    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
+//    @ColumnInfo(name = "id")
     @Expose(serialize = true, deserialize = false)
     public long id;
 
-    @ColumnInfo(name = "name")
+//    @ColumnInfo(name = "name")
     @Expose(serialize = true, deserialize = false)
     public String name;
 
-    @ColumnInfo(name = "code")
+//    @ColumnInfo(name = "code")
     @Expose(serialize = true, deserialize = false)
     public String code;
 
-    @ColumnInfo(name = "plan")
+//    @ColumnInfo(name = "plan")
     @Expose(serialize = true, deserialize = false)
     public String plan;
 
-    @ColumnInfo(name = "area")
+//    @ColumnInfo(name = "area")
     @Expose(serialize = true, deserialize = false)
     public Area area;
 

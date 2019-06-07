@@ -9,11 +9,11 @@ import lombok.Data;
 @Data
 public class Area {
 
-    @ColumnInfo(name = "id")
+//    @ColumnInfo(name = "id")
     @Expose(serialize = true, deserialize = false)
     public int id;
 
-    @ColumnInfo(name = "name")
+//    @ColumnInfo(name = "name")
     @Expose(serialize = true, deserialize = false)
     public String name;
 

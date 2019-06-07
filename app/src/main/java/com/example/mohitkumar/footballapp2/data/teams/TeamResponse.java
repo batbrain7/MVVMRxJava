@@ -6,8 +6,8 @@ import lombok.Data;
 
 @Data
 public class TeamResponse {
-    public List<TeamData> teamData;
+    public List<TeamData> teams;
     public int count;
-  //  public Competition competition;
-  //  public Season season;
+    public Competition competition;
+    public Season season;
 }

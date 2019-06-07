@@ -8,15 +8,28 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hi"
-            />
-        <TextView
+            android:layout_height="match_parent">
+        <android.support.v4.widget.SwipeRefreshLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Bye"
+            android:layout_height="match_parent"
+            android:id="@+id/pullToRefresh"
+            >
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/teamsRecyclerView"
+                >
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+        <ProgressBar
+            android:layout_width="@dimen/textViewFMA"
+            android:layout_height="@dimen/textViewFMA"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:id="@+id/progressBar"
             />
+        </FrameLayout>
     </LinearLayout>
 </layout>

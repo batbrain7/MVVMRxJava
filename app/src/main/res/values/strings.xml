@@ -14,7 +14,7 @@
         <item>PRIMEIRA LIGA</item>
         <item>EURO CUP</item>
         <item>WORLD CUP</item>
-        <item>SERIE A</item>
+        <item>SERIE A Brazil</item>
     </string-array>
 
     <string-array name="CountryNames">
@@ -77,7 +77,6 @@
 
     <string name="team_fragment">Teams</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="standings_fragment">Standings</string>
 </resources>
 

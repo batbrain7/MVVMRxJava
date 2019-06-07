@@ -6,6 +6,7 @@ import com.google.gson.annotations.Expose;
 
 import lombok.Data;
 
+@Data
 public class TeamData {
 
 //    @ColumnInfo(name = "id")
@@ -58,5 +59,7 @@ public class TeamData {
 
 //    @ColumnInfo(name = "area")
 //    @Expose(serialize = true, deserialize = false)
-//    public Area area;
+   public Area area;
+
+   public String lastUpdated;
 }
